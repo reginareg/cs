@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('autoservisas', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
-            $table->string('phone', 11);
+            $table->string('phone', 15);
             $table->string('address', 100);
             $table->unsignedBigInteger('paslauga_id');
             $table->foreign('paslauga_id')->references('id')->on('paslaugas');
