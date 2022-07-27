@@ -148,17 +148,35 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
-
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                @if(Auth::user()->role >= 2)
+                                <a class="dropdown-item" href="">
+                                    Visi vartotojai
                                 </a>
+                                @endif
+                                @if(Auth::user()->role >= 10)
+                                <a class="dropdown-item" href="">
+                                    Naujas vartotojas
+                                </a>
+                                @endif
+                                @if(Auth::user()->role >= 0)
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                <form class="delete" action="" method="post">
                                     @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-outline-danger m-2">Naikinti registraciją</button>
                                 </form>
-                            </div>
+
+                                @endif
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
                         </li>
                         @endguest
                     </ul>

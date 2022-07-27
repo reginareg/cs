@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('surname', 50);
             $table->string('photo',254);
             $table->unsignedTinyInteger('rating')->default(1);
+            $table->unsignedBigInteger('paslauga_id');
+            $table->foreign('paslauga_id')->references('id')->on('paslaugas');
             $table->timestamps();
         });
     }
