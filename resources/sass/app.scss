@@ -14,3 +14,16 @@
 .controls {
     display: flex;
 }
+.bg-logo{
+    background-origin: border-box;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    
+    background: url('http://localhost/cs/public/images/ac.jpg') no-repeat;
+    
+}
+.container{
+    opacity: 0.9;
+}
