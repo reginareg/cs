@@ -15,13 +15,17 @@
     display: flex;
 }
 .bg-logo{
-    background-origin: border-box;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+    // background-origin: border-box;
+    // display: block;
+    // margin-left: auto;
+    // margin-right: auto;
+    // width: 100%;
+    background: url('http://localhost/cs/public/images/ac.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 40rem !important;
     
-    background: url('http://localhost/cs/public/images/ac.jpg') no-repeat;
     
 }
 .container{
